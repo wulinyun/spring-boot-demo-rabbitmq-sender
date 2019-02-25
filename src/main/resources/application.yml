@@ -4,6 +4,7 @@ spring:
   rabbitmq:
     host: 192.168.223.133
     port: 5672
-    username: guest
-    password: guest
+    username: demo
+    password: demo
+    virtual-host: /landa_demo #没有特别设置另外的默认是/
 

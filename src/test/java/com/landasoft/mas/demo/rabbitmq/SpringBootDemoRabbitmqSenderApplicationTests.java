@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.landasoft.mas.demo.rabbitmq.bean.User;
 import com.landasoft.mas.demo.rabbitmq.sender.HelloSender;
 
 @RunWith(SpringRunner.class)
@@ -20,6 +21,10 @@ public class SpringBootDemoRabbitmqSenderApplicationTests {
     @Test
     public void testRabbit() {
         helloSender.send("hello,rabbit~");
+        User user = new User();
+        user.setUserName("wulinyun");
+        user.setUserPassword("88888888");
+        helloSender.send(user);
     }
 
 }

@@ -23,13 +23,13 @@ import com.landasoft.mas.demo.rabbitmq.config.SenderConf;
  * @date 2019年2月25日 下午2:17:02
  */
 @Component
-public class HelloSender {
+public class HelloTopicSender {
     @Autowired
     private AmqpTemplate amqpTemplate;
-    public void send(String str) {
-        amqpTemplate.convertAndSend(SenderConf.ROUTINGKEY, str);
+    public void send(String exchange,String queue,String str) {
+        amqpTemplate.convertAndSend(exchange, queue, str);;
     }
-    public void send(User user) {
-    	amqpTemplate.convertAndSend(SenderConf.ROUTINGKEY, user);
+    public void send(String exchange,String queue,User user) {
+    	amqpTemplate.convertAndSend(exchange, queue, user);
     }
 }
