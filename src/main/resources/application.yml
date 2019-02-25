@@ -1,1 +1,9 @@
+spring:
+  application:
+    name: spring-boot-demo-rabbitmq-sender
+  rabbitmq:
+    host: 192.168.223.133
+    port: 5672
+    username: guest
+    password: guest
 
