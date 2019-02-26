@@ -30,12 +30,20 @@ public class SpringBootDemoRabbitmqSenderApplicationTests {
         helloSender.send(user);
     }
     @Test
-    public void testRabbit2() {
+    public void testTopicRabbit() {
     	helloTopicSender.send("exchange", "topic.message", "hello,rabbit~");;
         User user = new User();
         user.setUserName("wulinyun");
         user.setUserPassword("88888888");
        // helloTopicSender.send("exchange", "topic.messages", user);
+    }
+    @Test
+    public void testFanoutRabbit() {
+    	helloTopicSender.send("fanoutExchange", "", "hello,fanout rabbit~");;
+        User user = new User();
+        user.setUserName("wulinyun");
+        user.setUserPassword("88888888");
+        //helloTopicSender.send("fanoutExchange", "", user);
     }
 
 }
